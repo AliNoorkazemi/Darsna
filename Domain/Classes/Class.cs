@@ -1,4 +1,6 @@
-﻿namespace Domain.Classes;
+﻿using MongoDB.Bson;
+
+namespace Domain.Classes;
 
 public class Class
 {
@@ -10,6 +12,7 @@ public class Class
 
     public Class(string name, string teacherId)
     {
+        Id = ObjectId.GenerateNewId().ToString();
         Name = name;
         TeacherId = teacherId;
     }
