@@ -17,5 +17,6 @@ public class Lesson
         Note = note;
         MediaId = mediaId;
         ClassId = classId;
+        CreatedAt = DateTime.Now;
     }
 }
