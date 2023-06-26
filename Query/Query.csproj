@@ -10,10 +10,4 @@
       <PackageReference Include="LiteBus" Version="0.15.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Handlers" />
-      <Folder Include="Queries" />
-      <Folder Include="QueryModels" />
-    </ItemGroup>
-
 </Project>
