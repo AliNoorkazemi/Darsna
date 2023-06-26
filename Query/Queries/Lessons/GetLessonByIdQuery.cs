@@ -5,5 +5,5 @@ namespace Query.Queries.Lessons;
 
 public class GetLessonByIdQuery : IQuery<LessonQueryModel>
 {
-    
+    public string Id { get; set; }
 }
