@@ -19,4 +19,12 @@ public abstract class User
         Password = password;
         Name = name;
     }
+
+    protected void Update(string userName, string email, string password, string name)
+    {
+        UserName = userName;
+        Email = email;
+        Password = password;
+        Name = name;
+    }
 }
