@@ -5,5 +5,5 @@ namespace Query.Queries.Media;
 
 public class GetMediaByIdQuery : IQuery<MediaQueryModel>
 {
-    
+    public string Id { get; set; }
 }

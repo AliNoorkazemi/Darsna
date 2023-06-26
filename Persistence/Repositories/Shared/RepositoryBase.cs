@@ -36,4 +36,14 @@ public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey>
     {
         throw new NotImplementedException();
     }
+
+    public Task<IReadOnlyCollection<T>> GetAllAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IReadOnlyCollection<TDerived>> GetAllAsync<TDerived>() where TDerived : T
+    {
+        throw new NotImplementedException();
+    }
 }
