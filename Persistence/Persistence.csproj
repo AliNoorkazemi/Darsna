@@ -7,13 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Repositories\Classes" />
-      <Folder Include="Repositories\Lessons" />
-      <Folder Include="Repositories\Media" />
-      <Folder Include="Repositories\Users" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 

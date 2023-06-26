@@ -1,9 +1,9 @@
-﻿namespace Domain.Lessons;
+﻿using Domain.Shared;
 
-public class Lesson
+namespace Domain.Lessons;
+
+public class Lesson : Domain<string>
 {
-    public string Id { get; set; }
-
     public DateTime CreatedAt { get; set; }
 
     public string Note { get; set; }

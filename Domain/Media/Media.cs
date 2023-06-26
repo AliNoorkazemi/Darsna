@@ -1,9 +1,9 @@
-﻿namespace Domain.Media;
+﻿using Domain.Shared;
 
-public class Media
+namespace Domain.Media;
+
+public class Media : Domain<string>
 {
-    public string Id { get; set; }
-
     public string Url { get; set; }
 
     public DateTime CreatedAt { get; set; }

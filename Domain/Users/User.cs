@@ -1,9 +1,9 @@
-﻿namespace Domain.Users;
+﻿using Domain.Shared;
 
-public abstract class User
+namespace Domain.Users;
+
+public abstract class User : Domain<string>
 {
-    public string Id { get; set; }
-
     public string UserName { get; set; }
 
     public string Email { get; set; }
