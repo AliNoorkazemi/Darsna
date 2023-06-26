@@ -13,8 +13,11 @@ public class CreateLessonHandler : ICommandHandler<CreateLessonCommand, string>
         _repository = repository;
     }
 
-    public Task<string> HandleAsync(CreateLessonCommand message, CancellationToken cancellationToken = new CancellationToken())
+    public Task<string> HandleAsync(CreateLessonCommand message,
+        CancellationToken cancellationToken = new CancellationToken())
     {
         var domain = new Lesson(message.Note, message.MediaId, message.ClassId);
+
+        return _repository.AddAsync(domain);
     }
 }

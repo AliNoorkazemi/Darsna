@@ -13,8 +13,12 @@ public class UpdateLessonHandler : ICommandHandler<UpdateLessonCommand>
         _repository = repository;
     }
 
-    public Task HandleAsync(UpdateLessonCommand message, CancellationToken cancellationToken = new CancellationToken())
+    public async Task HandleAsync(UpdateLessonCommand message, CancellationToken cancellationToken = new CancellationToken())
     {
+        var domain = await _repository.GetByIdAsync(message.Id);
         
+        domain.Update(message.Note, message.MediaId, message.ClassId);
+
+        await _repository.UpdateAsync(domain);
     }
 }
