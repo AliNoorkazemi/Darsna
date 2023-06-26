@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LiteBus" Version="0.15.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Handlers" />
+      <Folder Include="Queries" />
+      <Folder Include="QueryModels" />
+    </ItemGroup>
+
+</Project>
