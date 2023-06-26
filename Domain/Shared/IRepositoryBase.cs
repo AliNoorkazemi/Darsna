@@ -9,4 +9,6 @@ public interface IRepositoryBase<T, TKey>
     Task DeleteAsync(T domain);
 
     Task<T> GetByIdAsync(TKey key);
+
+    Task<TDerived> GetByIdAsync<TDerived>(TKey key) where TDerived : T;
 }

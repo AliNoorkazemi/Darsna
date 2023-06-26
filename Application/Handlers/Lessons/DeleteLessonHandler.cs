@@ -13,8 +13,10 @@ public class DeleteLessonHandler : ICommandHandler<DeleteLessonCommand>
         _repository = repository;
     }
 
-    public Task HandleAsync(DeleteLessonCommand message, CancellationToken cancellationToken = new CancellationToken())
+    public async Task HandleAsync(DeleteLessonCommand message, CancellationToken cancellationToken = new CancellationToken())
     {
-        
+        var domain = await _repository.GetByIdAsync(message.Id);
+
+        await _repository.DeleteAsync(domain);
     }
 }

@@ -31,4 +31,9 @@ public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey>
     {
         throw new NotImplementedException();
     }
+
+    public Task<TDerived> GetByIdAsync<TDerived>(TKey key) where TDerived : T
+    {
+        throw new NotImplementedException();
+    }
 }
