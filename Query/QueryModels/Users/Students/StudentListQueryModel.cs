@@ -1,6 +1,6 @@
 ﻿namespace Query.QueryModels.Users.Students;
 
-public class StudentListQueryModel
+public class StudentListQueryModel : UserListQueryModel
 {
     
 }
