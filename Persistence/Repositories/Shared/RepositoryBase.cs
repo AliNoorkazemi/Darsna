@@ -1,9 +1,10 @@
 ﻿using Domain.Shared;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Persistence.Repositories.Shared;
 
-public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey>
+public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey> where T : Domain<TKey>
 {
     private readonly IMongoCollection<T> _collection;
 
@@ -12,9 +13,16 @@ public class RepositoryBase<T, TKey> : IRepositoryBase<T, TKey>
         _collection = mongoConnection.GetCollection<T>();
     }
 
-    public Task<TKey> AddAsync(T domain)
+    public async Task<TKey> AddAsync(T domain)
     {
-        throw new NotImplementedException();
+        if (domain is Domain<string> stringIdDomain)
+        {
+            stringIdDomain.SetId(ObjectId.GenerateNewId().ToString());
+        }
+        
+        await _collection.InsertOneAsync(domain);
+
+        return domain.Id;
     }
 
     public Task UpdateAsync(T domain)

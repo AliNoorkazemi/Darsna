@@ -1,6 +1,6 @@
 ﻿namespace Domain.Shared;
 
-public interface IRepositoryBase<T, TKey>
+public interface IRepositoryBase<T, TKey> where T : Domain<TKey>
 {
     Task<TKey> AddAsync(T domain);
 

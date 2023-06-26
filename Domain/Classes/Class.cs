@@ -1,18 +1,16 @@
-﻿using MongoDB.Bson;
+﻿using Domain.Shared;
+using MongoDB.Bson;
 
 namespace Domain.Classes;
 
-public class Class
+public class Class : Domain<string>
 {
-    public string Id { get; set; }
-
     public string Name { get; set; }
 
     public string TeacherId { get; set; }
 
     public Class(string name, string teacherId)
     {
-        Id = ObjectId.GenerateNewId().ToString();
         Name = name;
         TeacherId = teacherId;
     }
