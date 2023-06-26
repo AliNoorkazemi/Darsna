@@ -19,4 +19,11 @@ public class Lesson
         ClassId = classId;
         CreatedAt = DateTime.Now;
     }
+    
+    public void Update(string note, string mediaId, string classId)
+    {
+        Note = note;
+        MediaId = mediaId;
+        ClassId = classId;
+    }
 }

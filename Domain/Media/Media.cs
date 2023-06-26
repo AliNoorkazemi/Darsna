@@ -19,4 +19,11 @@ public class Media
         DurationTicks = durationTicks;
         CreatedAt = DateTime.Now;
     }
+
+    public void Update(string url, int size, long durationTicks)
+    {
+        Url = url;
+        Size = size;
+        DurationTicks = durationTicks;
+    }
 }

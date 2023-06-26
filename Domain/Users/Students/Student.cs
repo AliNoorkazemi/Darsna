@@ -22,4 +22,14 @@ public class Student : User
     {
         FavoriteClassIds = favoriteClassIds.ToList();
     }
+    
+    public void Update(string userName,
+        string email,
+        string password,
+        string name,
+        IEnumerable<string> favoriteClassIds)
+    {
+        base.Update(userName, email, password, name);
+        FavoriteClassIds = favoriteClassIds.ToList();
+    }
 }

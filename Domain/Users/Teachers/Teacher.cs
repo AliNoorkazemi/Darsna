@@ -22,4 +22,14 @@ public class Teacher : User
     {
         ClassIds = classIds.ToList();
     }
+
+    public void Update(string userName, 
+        string email, 
+        string password, 
+        string name,
+        IEnumerable<string> classIds)
+    {
+        base.Update(userName, email, password, name);
+        ClassIds = classIds.ToList();
+    }
 }
